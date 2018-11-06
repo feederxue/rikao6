@@ -1,0 +1,108 @@
+@import"common.scss";
+@import"_minix.scss";
+@mixin wh($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+.wrap {
+    @include wh(100%, 100%);
+    @include box-flex;
+    @include direction(column);
+    overflow: hidden;
+    i {
+        font-size: pxTorem(16px)!important;
+    }
+    .h1 {
+        @include wh(100%, pxTorem(10px));
+        background: #eee;
+    }
+}
+
+header {
+    @include wh(100%, pxTorem(40px));
+    @include box-flex;
+    flex-shrink: 0;
+    @include align;
+    @include justify(center);
+    div {
+        width: 80%;
+        height: 80%;
+        @include box-flex;
+        @include align;
+        border: 1px solid #ccc;
+        span {
+            padding: 0 pxTorem(15px);
+            border-right: 1px solid #eee;
+        }
+        input {
+            border: 0;
+            outline: 0;
+            color: #ccc;
+        }
+    }
+}
+
+section {
+    flex: 1;
+    .swiper-container {
+        @include wh(100%, pxTorem(150px));
+        margin-top: pxTorem(10px);
+        flex-shrink: 0;
+        .swiper-slide {
+            @include box-flex;
+            @include flexWrap(wrap);
+            @include align;
+            @include justify(space-around);
+            dl {
+                width: 20%;
+                height: 50%;
+                text-align: center;
+                dd {
+                    margin-top: pxTorem(10px);
+                    i {
+                        background: pink;
+                        border-radius: 50%;
+                        padding: pxTorem(10px);
+                    }
+                }
+                dt {
+                    margin-top: pxTorem(15px);
+                    color: #ccc;
+                }
+            }
+        }
+    }
+    .txt {
+        @include wh(100%, pxTorem(50px));
+        padding: 0 pxTorem(10px);
+        @include sizing;
+        dl {
+            @include wh(100%, 100%);
+            @include box-flex;
+            @include align;
+            @include justify(center);
+            dd {
+                @include wh(pxTorem(50px), pxTorem(50px));
+                padding: pxTorem(10px);
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    @include wh(100%, pxTorem(50px));
+    @include box-flex;
+    @include justify(space-around);
+    @include align;
+    @include setBottomLine;
+    flex-shrink: 0;
+    dl {
+        @include wh(20%, 100%);
+        text-align: center;
+    }
+}
